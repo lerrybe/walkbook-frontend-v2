@@ -3,3 +3,4 @@
 
 echo "🍀🌲🌵🦖🥬🥦🍏🥑 walkbook...🧚"
 yarn run format
+yarn run lint:fix
