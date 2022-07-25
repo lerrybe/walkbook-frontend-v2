@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import loadable from '@loadable/component';
 
-import ErrorPage from '../pages/error';
-import MainPage from '../pages/main';
+const ErrorPage = loadable(() => import('../pages/error'));
+const MainPage = loadable(() => import('../pages/main'));
 
 const EntryRoute = () => {
   return (
