@@ -3,12 +3,12 @@ import { useDrawer } from '~/hooks/useDrawer';
 import { ReactComponent as ArrowRightIcon } from '~/assets/icons/icon-arrow-right.svg';
 
 import {
-  DesktopContainer,
-  DesktopInnerWrapper,
-  DesktopWrapper,
+  Container,
+  InnerWrapper,
   ToggleIconWrapper,
   ToggleInnerWrapper,
   ToggleWrapper,
+  Wrapper,
 } from './drawer.styled';
 
 interface IDrawerProps {
@@ -19,8 +19,8 @@ export const Drawer = ({ children }: IDrawerProps) => {
 
   return (
     <>
-      <DesktopWrapper>
-        <DesktopContainer
+      <Wrapper>
+        <Container
           initial={active ? 'open' : 'close'}
           animate={active ? 'open' : 'close'}
           variants={{ open: { width: '390px' }, close: { width: 0 } }}
@@ -30,8 +30,8 @@ export const Drawer = ({ children }: IDrawerProps) => {
             stiffness: 500,
           }}
         >
-          <DesktopInnerWrapper>{children}</DesktopInnerWrapper>
-        </DesktopContainer>
+          <InnerWrapper>{children}</InnerWrapper>
+        </Container>
 
         <ToggleWrapper>
           <ToggleInnerWrapper onClick={handleToggleDrawer}>
@@ -40,7 +40,7 @@ export const Drawer = ({ children }: IDrawerProps) => {
             </ToggleIconWrapper>
           </ToggleInnerWrapper>
         </ToggleWrapper>
-      </DesktopWrapper>
+      </Wrapper>
     </>
   );
 };
