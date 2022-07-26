@@ -69,6 +69,7 @@ export const MobileMenuItemWrapper = styled(motion.div)<IProps>`
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
+  z-index: 1001;
 `;
 
 export const MenuItemText = styled.span`
