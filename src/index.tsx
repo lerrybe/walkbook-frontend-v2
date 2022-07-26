@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { RecoilRoot } from 'recoil';
 
-import EntryRoute from './routes';
+import EntryRoute from '~/routes';
 
 const queryClient = new QueryClient();
 

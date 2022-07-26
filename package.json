@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.4.5",
     "@emotion/babel-plugin": "^11.9.2",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -14,6 +15,7 @@
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "firebase-tools": "^11.3.0",
+    "node-polyfill-webpack-plugin": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^4.0.0",
@@ -24,9 +26,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "format": "prettier --check ./src",
     "format:fix": "prettier --write ./src",
