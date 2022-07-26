@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { HTMLAttributes } from 'react';
 
-export const DesktopWrapper = styled.div`
+export const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@ export const DesktopWrapper = styled.div`
   z-index: 1000;
 `;
 
-export const DesktopContainer = styled(motion.div)`
+export const Container = styled(motion.div)`
   width: 390px;
   height: 100%;
   display: flex;
@@ -24,7 +24,7 @@ export const DesktopContainer = styled(motion.div)`
   overflow: hidden;
 `;
 
-export const DesktopInnerWrapper = styled.div`
+export const InnerWrapper = styled.div`
   min-width: 390px;
   height: auto;
   padding: 24px 20px;
