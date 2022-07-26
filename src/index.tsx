@@ -6,6 +6,9 @@ import { RecoilRoot } from 'recoil';
 
 import EntryRoute from '~/routes';
 
+import '~/styles/base.scss';
+import '~/styles/reset.scss';
+
 const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
