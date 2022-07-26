@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
+import { HTMLAttributes } from 'react';
 
 export const DesktopWrapper = styled.div`
   position: fixed;
@@ -11,14 +12,15 @@ export const DesktopWrapper = styled.div`
   z-index: 1000;
 `;
 
-export const DesktopContainer = styled(motion.div)<{ bgColor: string }>`
+export const DesktopContainer = styled(motion.div)`
   width: 390px;
   height: 100%;
   display: flex;
   position: relative;
   flex-direction: column;
   justify-content: space-between;
-  background-color: ${({ bgColor }) => `${bgColor}`};
+  background-color: #fff;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
 `;
 
@@ -28,9 +30,38 @@ export const DesktopInnerWrapper = styled.div`
   padding: 24px 20px;
 `;
 
-// TODO: toggle hook으로 만들 것
-export const Button = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
+export const ToggleWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
 `;
+
+export const ToggleInnerWrapper = styled.div`
+  width: 28px;
+  height: 70px;
+  background-color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+interface IconWrapperProps extends HTMLAttributes<HTMLDivElement> {
+  active?: boolean;
+}
+
+export const ToggleIconWrapper = styled.div<IconWrapperProps>(
+  ({ active }) => `
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
+  ${active && 'animation: rotate 0.5s ease-in-out both'};
+`
+);
