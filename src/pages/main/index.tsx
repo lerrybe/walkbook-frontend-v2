@@ -1,5 +1,11 @@
+import { Gnb } from '~/components/gnb';
+
 const MainPage = () => {
-  return <div>워크북 메인페이지</div>;
+  return (
+    <>
+      <Gnb />
+    </>
+  );
 };
 
 export default MainPage;
