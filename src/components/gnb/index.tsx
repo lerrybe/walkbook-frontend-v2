@@ -22,7 +22,7 @@ interface IGnbProps {
 }
 export const Gnb = ({ shadow }: IGnbProps) => {
   const navigate = useNavigate();
-  const [token] = useState('sampleToken');
+  const [token] = useState('');
   const [active, setActive] = useState(false);
   const handleToggleMenu = useCallback(() => {
     setActive((prev) => !prev);
@@ -50,7 +50,7 @@ export const Gnb = ({ shadow }: IGnbProps) => {
                 </ButtonWrapper>
               </>
             ) : (
-              <ButtonWrapper onClick={() => navigate('/')}>
+              <ButtonWrapper onClick={() => navigate('/signin')}>
                 <Button text={'로그인 / 회원가입'} />
               </ButtonWrapper>
             )}

@@ -8,8 +8,18 @@ interface IButtonProps {
   color?: string;
   radius?: number;
   fontSize?: number;
+  onClick?: () => void;
 }
-export const Button = ({ width, height, text, bgColor, color, radius, fontSize }: IButtonProps) => {
+export const Button = ({
+  width,
+  height,
+  text,
+  bgColor,
+  color,
+  radius,
+  fontSize,
+  onClick,
+}: IButtonProps) => {
   return (
     <ButtonWrapper
       width={width || 'auto'}
@@ -18,6 +28,7 @@ export const Button = ({ width, height, text, bgColor, color, radius, fontSize }
       color={color || '#fff'}
       radius={radius || 8}
       fontSize={fontSize || 14}
+      onClick={onClick}
     >
       {text}
     </ButtonWrapper>
