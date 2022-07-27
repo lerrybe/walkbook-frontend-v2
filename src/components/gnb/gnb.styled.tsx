@@ -33,10 +33,13 @@ interface IWrapperProps {
 export const Wrapper = styled.div<IWrapperProps>(
   ({ shadow }) => `
   width: 100%;
+  min-width: 360px;
   height: 72px;
   display: flex;
+  position: fixed;
   align-items: center;
   padding: 20px 40px;
+  z-index: 1002;
 
   ${shadow && 'box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1)'};
 
@@ -69,7 +72,6 @@ export const MobileMenuItemWrapper = styled(motion.div)<IProps>`
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
-  z-index: 1001;
 `;
 
 export const MenuItemText = styled.span`
@@ -92,7 +94,7 @@ export const MenuItemText = styled.span`
     margin: 14px 30px;
     font-size: 16px;
 
-    &:first-child {
+    &:first-of-type {
       margin-top: 24px;
     }
     &:last-child {
