@@ -2,7 +2,10 @@
 
 body {
   font-family: 'NanumSquare';
-  background-color: #f7f7f7;
+  background: linear-gradient(109.65deg, #ffffff 6.6%, #dfe9f3 89.44%);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
 }
 
 #root {
