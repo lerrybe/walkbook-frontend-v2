@@ -59,7 +59,7 @@ export const Gnb = ({ shadow }: IGnbProps) => {
 
         <MobileWrapper>
           <LogoWrapper>
-            <LogoSmallIcon />
+            <LogoSmallIcon onClick={() => navigate('/')} />
           </LogoWrapper>
           <MenuIconWrapper>
             <MenuIcon onClick={handleToggleMenu} />
