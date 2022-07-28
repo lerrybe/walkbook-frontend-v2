@@ -1,4 +1,4 @@
-import { ButtonWrapper } from './button.styled';
+import { ButtonWrapper } from './button-light.styled';
 
 interface IButtonProps {
   width?: string;
@@ -10,7 +10,7 @@ interface IButtonProps {
   fontSize?: number;
   onClick?: () => void;
 }
-export const Button = ({
+export const ButtonLight = ({
   width,
   height,
   text,
@@ -24,7 +24,7 @@ export const Button = ({
     <ButtonWrapper
       width={width || 'auto'}
       height={height || 'auto'}
-      bgColor={bgColor || '#000'}
+      bgColor={bgColor || '#00C471'}
       color={color || '#fff'}
       radius={radius || 8}
       fontSize={fontSize || 14}

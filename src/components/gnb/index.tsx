@@ -1,8 +1,11 @@
 import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { ReactComponent as LogoLargeIcon } from '~/assets/icons/logo-large.svg';
 import { ReactComponent as LogoSmallIcon } from '~/assets/icons/logo-small.svg';
 import { ReactComponent as MenuIcon } from '~/assets/icons/icon-menu.svg';
+
+import { clearItem, loadItem } from '~/utils/storage';
 
 import { Button } from '../button';
 import {
@@ -22,11 +25,17 @@ interface IGnbProps {
 }
 export const Gnb = ({ shadow }: IGnbProps) => {
   const navigate = useNavigate();
-  const [token] = useState('sampleToken');
+  const [token] = useState(loadItem('token'));
   const [active, setActive] = useState(false);
+
   const handleToggleMenu = useCallback(() => {
     setActive((prev) => !prev);
   }, [active]);
+
+  const handleClickLogout = useCallback(() => {
+    clearItem('token');
+    window.location.href = '/';
+  }, [token]);
 
   return (
     <>
@@ -45,12 +54,12 @@ export const Gnb = ({ shadow }: IGnbProps) => {
                 <ButtonWrapper onClick={() => navigate('/')}>
                   <Button text={'산책로 등록하기'} />
                 </ButtonWrapper>
-                <ButtonWrapper onClick={() => navigate('/')}>
+                <ButtonWrapper onClick={handleClickLogout}>
                   <Button text={'로그아웃'} />
                 </ButtonWrapper>
               </>
             ) : (
-              <ButtonWrapper onClick={() => navigate('/')}>
+              <ButtonWrapper onClick={() => navigate('/signin')}>
                 <Button text={'로그인 / 회원가입'} />
               </ButtonWrapper>
             )}
@@ -58,8 +67,8 @@ export const Gnb = ({ shadow }: IGnbProps) => {
         </DesktopWrapper>
 
         <MobileWrapper>
-          <LogoWrapper>
-            <LogoSmallIcon onClick={() => navigate('/')} />
+          <LogoWrapper onClick={() => navigate('/')}>
+            <LogoSmallIcon />
           </LogoWrapper>
           <MenuIconWrapper>
             <MenuIcon onClick={handleToggleMenu} />
@@ -79,10 +88,10 @@ export const Gnb = ({ shadow }: IGnbProps) => {
               <>
                 <MenuItemText onClick={() => navigate('/')}>{'Walkbook'}</MenuItemText>
                 <MenuItemText onClick={() => navigate('/')}>{'산책로 등록하기'}</MenuItemText>
-                <MenuItemText onClick={() => navigate('/')}>{'로그아웃'}</MenuItemText>
+                <MenuItemText onClick={handleClickLogout}>{'로그아웃'}</MenuItemText>
               </>
             ) : (
-              <MenuItemText onClick={() => navigate('/')}>{'로그인 / 회원가입'}</MenuItemText>
+              <MenuItemText onClick={() => navigate('/signin')}>{'로그인 / 회원가입'}</MenuItemText>
             )}
           </MobileMenuItemWrapper>
         </MobileWrapper>
