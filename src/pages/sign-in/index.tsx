@@ -56,8 +56,11 @@ const SignInPage = () => {
   }, []);
 
   const handleSubmitSignIn = useCallback((username: string, password: string) => {
-    if (!username.trim() || !password.trim()) {
+    if (!username.trim()) {
       setValidReqUsername(false);
+      return;
+    }
+    if (!password.trim()) {
       setValidReqPassword(false);
       return;
     }
