@@ -7,7 +7,7 @@ interface WrapperProps {
 export const Wrapper = styled.div(
   ({ margin }: WrapperProps) => `
   width: 100%;
-  margin-bottom: ${margin};
+  margin-top: ${margin};
 `
 );
 
@@ -18,6 +18,7 @@ export const Label = styled.label`
   font-weight: 700;
   width: auto;
   margin-bottom: 8px;
+  margin-left: 5px;
   display: block;
 `;
 

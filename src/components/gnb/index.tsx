@@ -4,6 +4,8 @@ import { ReactComponent as LogoLargeIcon } from '~/assets/icons/logo-large.svg';
 import { ReactComponent as LogoSmallIcon } from '~/assets/icons/logo-small.svg';
 import { ReactComponent as MenuIcon } from '~/assets/icons/icon-menu.svg';
 
+import { loadItem } from '~/utils/storage';
+
 import { Button } from '../button';
 import {
   ButtonWrapper,
@@ -22,7 +24,7 @@ interface IGnbProps {
 }
 export const Gnb = ({ shadow }: IGnbProps) => {
   const navigate = useNavigate();
-  const [token] = useState('');
+  const token = loadItem('token');
   const [active, setActive] = useState(false);
   const handleToggleMenu = useCallback(() => {
     setActive((prev) => !prev);
@@ -82,7 +84,7 @@ export const Gnb = ({ shadow }: IGnbProps) => {
                 <MenuItemText onClick={() => navigate('/')}>{'로그아웃'}</MenuItemText>
               </>
             ) : (
-              <MenuItemText onClick={() => navigate('/')}>{'로그인 / 회원가입'}</MenuItemText>
+              <MenuItemText onClick={() => navigate('/signin')}>{'로그인 / 회원가입'}</MenuItemText>
             )}
           </MobileMenuItemWrapper>
         </MobileWrapper>
