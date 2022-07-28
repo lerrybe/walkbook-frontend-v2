@@ -105,7 +105,7 @@ const SignInPage = () => {
           <WarningWrapper>{'* 올바른 비밀번호를 입력해 주세요.'}</WarningWrapper>
         )}
 
-        <SignUpNavigate onClick={() => navigate('/signin')}>
+        <SignUpNavigate onClick={() => navigate('/signup')}>
           {'처음 오셨나요? 회원가입 하러가기'}
         </SignUpNavigate>
         <LandingNavigate onClick={() => navigate('/')}>{'홈으로 가기'}</LandingNavigate>

@@ -15,9 +15,9 @@ export const Wrapper = styled.div`
   position: relative;
 
   @media (min-width: 712px) {
-    padding: 76px 50px 0 50px;
+    padding: 76px 50px 65px 50px;
     width: 456px;
-    height: 610px;
+    height: auto;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin: auto;
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 711px) {
     width: 100%;
-    padding: 65px 24px 0;
+    padding: 65px 24px 55px;
   }
 `;
 
