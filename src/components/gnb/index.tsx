@@ -25,7 +25,7 @@ interface IGnbProps {
 }
 export const Gnb = ({ shadow }: IGnbProps) => {
   const navigate = useNavigate();
-  const [token, setToken] = useState(loadItem('token'));
+  const [token] = useState(loadItem('token'));
   const [active, setActive] = useState(false);
 
   const handleToggleMenu = useCallback(() => {
@@ -34,8 +34,7 @@ export const Gnb = ({ shadow }: IGnbProps) => {
 
   const handleClickLogout = useCallback(() => {
     clearItem('token');
-    setToken('');
-    navigate('/');
+    window.location.href = '/';
   }, [token]);
 
   return (
@@ -55,7 +54,7 @@ export const Gnb = ({ shadow }: IGnbProps) => {
                 <ButtonWrapper onClick={() => navigate('/')}>
                   <Button text={'산책로 등록하기'} />
                 </ButtonWrapper>
-                <ButtonWrapper onClick={() => navigate('/')}>
+                <ButtonWrapper onClick={handleClickLogout}>
                   <Button text={'로그아웃'} />
                 </ButtonWrapper>
               </>
@@ -68,8 +67,8 @@ export const Gnb = ({ shadow }: IGnbProps) => {
         </DesktopWrapper>
 
         <MobileWrapper>
-          <LogoWrapper>
-            <LogoSmallIcon onClick={() => navigate('/')} />
+          <LogoWrapper onClick={() => navigate('/')}>
+            <LogoSmallIcon />
           </LogoWrapper>
           <MenuIconWrapper>
             <MenuIcon onClick={handleToggleMenu} />

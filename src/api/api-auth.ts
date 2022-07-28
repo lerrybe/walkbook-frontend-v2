@@ -19,7 +19,9 @@ export const signIn = async ({ username, password }: SigninRequest) => {
       status,
     } = response;
 
-    if (status === 200) saveItem('token', authorization);
+    if (status === 200) {
+      saveItem('token', authorization);
+    }
     return status;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (e: any) {

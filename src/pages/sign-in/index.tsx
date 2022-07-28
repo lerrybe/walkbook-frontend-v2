@@ -76,6 +76,7 @@ const SignInPage = () => {
       } else {
         setModalText(signInResult);
         setModalVisible(true);
+        return;
       }
     })();
   }, []);
