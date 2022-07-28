@@ -6,6 +6,6 @@ export const Wrapper = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1003;
 `;

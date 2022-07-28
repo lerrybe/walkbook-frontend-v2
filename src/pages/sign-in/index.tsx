@@ -7,6 +7,7 @@ import { ReactComponent as LogoMedium } from '~/assets/icons/logo-medium.svg';
 import { signIn } from '~/api/api-auth';
 import InputLabel from '~/components/input-label';
 import { ButtonLight } from '~/components/button-light';
+import { AnnounceModal } from '~/components/announce-modal';
 
 import { SigninResponse } from '~/types/auth';
 
@@ -26,6 +27,8 @@ const SignInPage = () => {
   // state 관련 리팩토링
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [modalText, setModalText] = useState<SigninResponse>('');
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [validReqUsername, setValidReqUsername] = useState<boolean>(true);
   const [validReqPassword, setValidReqPassword] = useState<boolean>(true);
   const navigate = useNavigate();
@@ -48,6 +51,10 @@ const SignInPage = () => {
     [password]
   );
 
+  const handleCloseModal = useCallback(() => {
+    setModalVisible(false);
+  }, []);
+
   const handleSubmitSignIn = useCallback((username: string, password: string) => {
     if (!username.trim() || !password.trim()) {
       setValidReqUsername(false);
@@ -62,17 +69,22 @@ const SignInPage = () => {
       });
 
       if (signInResult === 200) {
-        console.log('환영 모달');
         navigate('/');
       } else {
-        // 모달에 메시지 담아서 띄워주기
-        alert(signInResult);
+        setModalText(signInResult);
+        setModalVisible(true);
       }
     })();
   }, []);
 
   return (
     <OuterWrapper>
+      {modalVisible && (
+        <AnnounceModal text={modalText}>
+          <ButtonLight text={'확인'} radius={12} onClick={handleCloseModal} />
+        </AnnounceModal>
+      )}
+
       <Wrapper>
         <LogoWrapper>
           <CloseIconWrapper onClick={() => navigate('/')}>
