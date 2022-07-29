@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   justify-content: flex-start;
-  z-index: 1000;
+  z-index: 1005;
 `;
 
 export const Container = styled(motion.div)`

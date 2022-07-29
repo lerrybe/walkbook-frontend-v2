@@ -22,8 +22,9 @@ import {
 
 interface IGnbProps {
   shadow?: boolean;
+  bgColor?: string;
 }
-export const Gnb = ({ shadow }: IGnbProps) => {
+export const Gnb = ({ shadow, bgColor }: IGnbProps) => {
   const navigate = useNavigate();
   const [token] = useState(loadItem('token'));
   const [active, setActive] = useState(false);
@@ -39,7 +40,7 @@ export const Gnb = ({ shadow }: IGnbProps) => {
 
   return (
     <>
-      <Wrapper shadow={shadow}>
+      <Wrapper shadow={shadow} bgColor={bgColor}>
         <DesktopWrapper>
           <LogoWrapper onClick={() => navigate('/')}>
             <LogoLargeIcon />
