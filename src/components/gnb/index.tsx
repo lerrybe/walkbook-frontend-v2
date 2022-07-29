@@ -47,7 +47,7 @@ export const Gnb = ({ shadow, bgColor }: IGnbProps) => {
           </LogoWrapper>
           <MenuItemWrapper>
             <MenuItemText onClick={() => navigate('/')}>{'About'}</MenuItemText>
-            <MenuItemText onClick={() => navigate('/')}>{'Map'}</MenuItemText>
+            <MenuItemText onClick={() => navigate('/map')}>{'Map'}</MenuItemText>
             <MenuItemText onClick={() => navigate('/')}>{'Cards'}</MenuItemText>
             {token ? (
               <>
@@ -83,7 +83,7 @@ export const Gnb = ({ shadow, bgColor }: IGnbProps) => {
             }}
           >
             <MenuItemText onClick={() => navigate('/')}>{'About'}</MenuItemText>
-            <MenuItemText onClick={() => navigate('/')}>{'Map'}</MenuItemText>
+            <MenuItemText onClick={() => navigate('/map')}>{'Map'}</MenuItemText>
             <MenuItemText onClick={() => navigate('/')}>{'Cards'}</MenuItemText>
             {token ? (
               <>
