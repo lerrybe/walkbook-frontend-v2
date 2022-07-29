@@ -1,13 +1,17 @@
-import { BottomSheet } from '~/components/bottom-sheet';
-import DesktopWrapper from '~/components/desktop-wrapper';
-import { Drawer } from '~/components/drawer';
 import { Gnb } from '~/components/gnb';
+import { Drawer } from '~/components/drawer';
+import { BottomSheet } from '~/components/bottom-sheet';
+import Map from '~/components/map';
+
+import DesktopWrapper from '~/components/desktop-wrapper';
 import MobileWrapper from '~/components/mobile-wrapper';
 
 const WalkloadCreatePage = () => {
   return (
     <>
-      <Gnb shadow />
+      <Gnb bgColor={'#ffffffbf'} shadow />
+      <Map />
+
       <DesktopWrapper>
         <Drawer></Drawer>
       </DesktopWrapper>
