@@ -27,6 +27,7 @@ export const ToggleWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 5px 0;
+  /* background-color: green; */
 `;
 
 interface IconWrapperProps extends HTMLAttributes<HTMLDivElement> {
@@ -50,5 +51,4 @@ export const ToggleIconWrapper = styled.div<IconWrapperProps>(
 export const InnerWrapper = styled.div`
   min-height: 390px;
   width: auto;
-  padding: 14px 20px 20px 20px;
 `;

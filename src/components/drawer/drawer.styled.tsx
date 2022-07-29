@@ -27,7 +27,6 @@ export const Container = styled(motion.div)`
 export const InnerWrapper = styled.div`
   min-width: 390px;
   height: auto;
-  padding: 24px 20px;
 `;
 
 export const ToggleWrapper = styled.div`
