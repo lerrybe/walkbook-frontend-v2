@@ -17,7 +17,8 @@ export const ButtonWrapper = styled.button<WrapperProps>(
   background-color: ${bgColor};
   color: ${color};
   border-radius: ${`${radius}px`};
-  padding: 12px 18px;
+  text-align: center;
+  vertical-align: center;
   font-size: ${`${fontSize}px`};
   font-weight: 600;
   transition: all 0.2s ease-out;

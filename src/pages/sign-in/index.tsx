@@ -27,10 +27,13 @@ const SignInPage = () => {
   // state 관련 리팩토링
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+
   const [modalText, setModalText] = useState<SigninResponse>('');
   const [modalVisible, setModalVisible] = useState<boolean>(false);
+
   const [validReqUsername, setValidReqUsername] = useState<boolean>(true);
   const [validReqPassword, setValidReqPassword] = useState<boolean>(true);
+
   const navigate = useNavigate();
 
   const handleChangeUsername = useCallback(
@@ -56,6 +59,8 @@ const SignInPage = () => {
   }, []);
 
   const handleSubmitSignIn = useCallback((username: string, password: string) => {
+    // REFACTOR: 그냥 valid~로 체크 가능?
+    // 처음에 true라 공백 걸러줘야함. -> 공백에 넣는건? 좋다.
     if (!username.trim()) {
       setValidReqUsername(false);
       return;
