@@ -19,6 +19,15 @@ export const signIn = async ({ username, password }: SigninRequest) => {
       status,
     } = response;
 
+    // TODO: response에서 필요한 정보 뽑아내기 (data에서 보내준다고함)
+    // 리팩토링 용이하게 수정하기
+    // 로그인 된 유무 어떻게 구별? signin도 로그인 되었을 때, 로그아웃 되었을 때 분기 잘 치기
+    // signin 리팩토링
+    // 행동 정리 정돈하기
+    // 에러 객체 타입?
+    // api 함수 어떻게 폼 잡아놓을지 생각
+
+    console.log('response 확인용 콘솔', response);
     if (status === 200) {
       saveItem('token', authorization);
     }
