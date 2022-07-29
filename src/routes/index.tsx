@@ -5,7 +5,6 @@ const ErrorPage = loadable(() => import('~/pages/error'));
 const MainPage = loadable(() => import('~/pages/main'));
 const SignInPage = loadable(() => import('~/pages/sign-in'));
 const SignUpPage = loadable(() => import('~/pages/sign-up'));
-const WalkloadMap = loadable(() => import('~/pages/walkload-map'));
 const WalkloadCreatePage = loadable(() => import('~/pages/walkload-create'));
 
 const EntryRoute = () => {
@@ -15,7 +14,6 @@ const EntryRoute = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/map" element={<WalkloadMap />} />
         <Route path="/create" element={<WalkloadCreatePage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

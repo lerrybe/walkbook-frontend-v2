@@ -47,12 +47,11 @@ export const Gnb = ({ shadow, bgColor }: IGnbProps) => {
           </LogoWrapper>
           <MenuItemWrapper>
             <MenuItemText onClick={() => navigate('/')}>{'About'}</MenuItemText>
-            <MenuItemText onClick={() => navigate('/map')}>{'Map'}</MenuItemText>
             <MenuItemText onClick={() => navigate('/')}>{'Cards'}</MenuItemText>
             {token ? (
               <>
                 <MenuItemText onClick={() => navigate('/')}>{'Walkbook'}</MenuItemText>
-                <ButtonWrapper onClick={() => navigate('/')}>
+                <ButtonWrapper onClick={() => navigate('/create')}>
                   <Button text={'산책로 등록하기'} />
                 </ButtonWrapper>
                 <ButtonWrapper onClick={handleClickLogout}>
@@ -83,12 +82,11 @@ export const Gnb = ({ shadow, bgColor }: IGnbProps) => {
             }}
           >
             <MenuItemText onClick={() => navigate('/')}>{'About'}</MenuItemText>
-            <MenuItemText onClick={() => navigate('/map')}>{'Map'}</MenuItemText>
             <MenuItemText onClick={() => navigate('/')}>{'Cards'}</MenuItemText>
             {token ? (
               <>
                 <MenuItemText onClick={() => navigate('/')}>{'Walkbook'}</MenuItemText>
-                <MenuItemText onClick={() => navigate('/')}>{'산책로 등록하기'}</MenuItemText>
+                <MenuItemText onClick={() => navigate('/create')}>{'산책로 등록하기'}</MenuItemText>
                 <MenuItemText onClick={handleClickLogout}>{'로그아웃'}</MenuItemText>
               </>
             ) : (

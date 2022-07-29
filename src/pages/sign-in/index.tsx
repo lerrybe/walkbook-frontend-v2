@@ -90,7 +90,13 @@ const SignInPage = () => {
     <OuterWrapper>
       {modalVisible && (
         <AnnounceModal text={modalText}>
-          <ButtonLight text={'확인'} radius={12} onClick={handleCloseModal} />
+          <ButtonLight
+            text={'확인'}
+            radius={12}
+            onClick={handleCloseModal}
+            width={'70px'}
+            height={'45px'}
+          />
         </AnnounceModal>
       )}
 
