@@ -22,13 +22,19 @@ export const Container = styled(motion.div)`
   border-radius: 40px 40px 0 0;
 `;
 
-export const ToggleWrapper = styled.div`
+interface ToggleWrapperProps extends HTMLAttributes<HTMLDivElement> {
+  bgColor?: string;
+}
+
+export const ToggleWrapper = styled.div<ToggleWrapperProps>(
+  ({ bgColor }) => `
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 5px 0;
-  /* background-color: green; */
-`;
+  ${bgColor && `background-color: ${bgColor}`};
+`
+);
 
 interface IconWrapperProps extends HTMLAttributes<HTMLDivElement> {
   active?: boolean;

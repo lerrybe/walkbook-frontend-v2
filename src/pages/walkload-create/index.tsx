@@ -17,7 +17,9 @@ const WalkloadCreatePage = () => {
       </DesktopWrapper>
 
       <MobileWrapper>
-        <BottomSheet>bottom sheet</BottomSheet>
+        <BottomSheet arrowIconColorWhite bgColor="#00C471">
+          bottom sheet
+        </BottomSheet>
       </MobileWrapper>
     </>
   );

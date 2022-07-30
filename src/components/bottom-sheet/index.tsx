@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { useBottomSheet } from '~/hooks/useBottomSheet';
-import { ReactComponent as CaretUpIcon } from '~/assets/icons/icon-caret-up.svg';
+import { ReactComponent as CaretUpIconWhite } from '~/assets/icons/icon-caret-up-white.svg';
+import { ReactComponent as CaretUpIconBlack } from '~/assets/icons/icon-caret-up-black.svg';
 
 import {
   Container,
@@ -12,8 +13,10 @@ import {
 
 interface IBottomSheetProps {
   children?: ReactNode;
+  arrowIconColorWhite?: boolean;
+  bgColor?: string;
 }
-export const BottomSheet = ({ children }: IBottomSheetProps) => {
+export const BottomSheet = ({ children, arrowIconColorWhite, bgColor }: IBottomSheetProps) => {
   const { active, handleToggleBottomSheet } = useBottomSheet();
 
   return (
@@ -29,9 +32,9 @@ export const BottomSheet = ({ children }: IBottomSheetProps) => {
             stiffness: 500,
           }}
         >
-          <ToggleWrapper onClick={handleToggleBottomSheet}>
+          <ToggleWrapper onClick={handleToggleBottomSheet} bgColor={bgColor || 'white'}>
             <ToggleIconWrapper active={active}>
-              <CaretUpIcon />
+              {arrowIconColorWhite ? <CaretUpIconWhite /> : <CaretUpIconBlack />}
             </ToggleIconWrapper>
           </ToggleWrapper>
 
