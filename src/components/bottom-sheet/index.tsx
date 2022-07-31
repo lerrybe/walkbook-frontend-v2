@@ -23,6 +23,7 @@ export const BottomSheet = ({ children, arrowIconColorWhite, bgColor }: IBottomS
     <>
       <Wrapper>
         <Container
+          bgColor={bgColor || '#fff'}
           initial={active ? 'open' : 'close'}
           animate={active ? 'open' : 'close'}
           variants={{ open: { height: 'auto' }, close: { height: '50px' } }}
@@ -32,7 +33,7 @@ export const BottomSheet = ({ children, arrowIconColorWhite, bgColor }: IBottomS
             stiffness: 500,
           }}
         >
-          <ToggleWrapper onClick={handleToggleBottomSheet} bgColor={bgColor || 'white'}>
+          <ToggleWrapper onClick={handleToggleBottomSheet} bgColor={bgColor || '#fff'}>
             <ToggleIconWrapper active={active}>
               {arrowIconColorWhite ? <CaretUpIconWhite /> : <CaretUpIconBlack />}
             </ToggleIconWrapper>
