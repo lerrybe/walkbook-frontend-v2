@@ -30,7 +30,6 @@ export const Container = styled(motion.div)<ContainerProps>(
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
   box-shadow: 0 -4px 12px 0 rgba(0, 0, 0, 0.1);
   overflow: auto;
   border-radius: 40px 40px 0 0;
