@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { useBottomSheet } from '~/hooks/useBottomSheet';
+
 import { ReactComponent as CaretUpIconWhite } from '~/assets/icons/icon-caret-up-white.svg';
 import { ReactComponent as CaretUpIconBlack } from '~/assets/icons/icon-caret-up-black.svg';
 
@@ -16,6 +17,7 @@ interface IBottomSheetProps {
   arrowIconColorWhite?: boolean;
   bgColor?: string;
 }
+
 export const BottomSheet = ({ children, arrowIconColorWhite, bgColor }: IBottomSheetProps) => {
   const { active, handleToggleBottomSheet } = useBottomSheet();
 
