@@ -1,12 +1,12 @@
 import InputLabel from '~/components/input-label';
-import { Wrapper, CreateTitle, TitleWrapper, EnrollTitle, ResetTitle } from './create.styled';
+import { Wrapper, UpdateTitle, TitleWrapper, EnrollTitle, ResetTitle } from './update.styled';
 
-const Create = () => {
+const Update = () => {
   return (
     <Wrapper>
       <TitleWrapper>
         <ResetTitle>{'초기화'}</ResetTitle>
-        <CreateTitle>{'신규 산책로 추가'}</CreateTitle>
+        <UpdateTitle>{'산책로 수정하기'}</UpdateTitle>
         <EnrollTitle>{'등록하기'}</EnrollTitle>
       </TitleWrapper>
       <InputLabel
@@ -52,4 +52,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default Update;

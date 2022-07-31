@@ -4,17 +4,17 @@ import { HTMLAttributes } from 'react';
 interface WrapperProps extends HTMLAttributes<HTMLButtonElement> {
   width?: string;
   height?: string;
-  bgColor?: string;
+  bgcolor?: string;
   color?: string;
   radius?: number;
   fontSize?: number;
 }
 
 export const ButtonWrapper = styled.button<WrapperProps>(
-  ({ width, height, bgColor, color, radius, fontSize }) => `
+  ({ width, height, bgcolor, color, radius, fontSize }) => `
   width: ${width};
   height: ${height};
-  background-color: ${bgColor};
+  background-color: ${bgcolor};
   color: ${color};
   border-radius: ${`${radius}px`};
   text-align: center;

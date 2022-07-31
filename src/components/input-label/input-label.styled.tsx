@@ -27,12 +27,12 @@ export const InputWrapper = styled.div`
 `;
 
 interface InputProps {
-  bgColor?: string;
+  bgcolor?: string;
 }
 
 export const Input = styled.input(
-  ({ bgColor }: InputProps) => `
-  background-color: ${bgColor};
+  ({ bgcolor }: InputProps) => `
+  background-color: ${bgcolor};
   flex-grow: 1;
   height: 50px;
   border: 2px solid #eee;

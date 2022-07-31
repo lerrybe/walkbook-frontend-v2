@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import MarkerLargeImagePng from '~/assets/images/marker-large.png';
 import LandingBgLargeImagePng from '~/assets/images/landing-bg-large.png';
 
@@ -18,6 +20,8 @@ import {
 } from './main.styled';
 
 const MainPage = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Gnb />
@@ -43,6 +47,7 @@ const MainPage = () => {
               radius={40}
               text={'지금 시작하기'}
               fontSize={20}
+              onClick={() => navigate('/create')}
             />
           </ButtonWrapper>
         </DescriptionWrapper>
