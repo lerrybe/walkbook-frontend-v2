@@ -26,11 +26,16 @@ export const InputWrapper = styled.div`
   display: flex;
 `;
 
-export const Input = styled.input`
+interface InputProps {
+  bgColor?: string;
+}
+
+export const Input = styled.input(
+  ({ bgColor }: InputProps) => `
+  background-color: ${bgColor};
   flex-grow: 1;
   height: 50px;
-  background: #eee;
-  border: none;
+  border: 2px solid #eee;
   border-radius: 10px;
   padding: 14px;
   font-weight: 400;
@@ -40,4 +45,5 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
-`;
+`
+);

@@ -21,12 +21,21 @@ export const Container = styled(motion.div)`
   justify-content: space-between;
   background-color: #fff;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  overflow-x: hidden;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
 `;
 
 export const InnerWrapper = styled.div`
   min-width: 390px;
-  height: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const ToggleWrapper = styled.div`
