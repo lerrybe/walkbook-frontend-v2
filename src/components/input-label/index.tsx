@@ -8,7 +8,7 @@ interface InputLabelProps {
   placeholder?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   margin?: string;
-  bgColor?: string;
+  bgcolor?: string;
   children?: ReactNode;
 }
 
@@ -19,7 +19,7 @@ const InputLabel = ({
   placeholder,
   margin,
   children,
-  bgColor,
+  bgcolor,
   onChange,
 }: InputLabelProps) => {
   return (
@@ -31,7 +31,7 @@ const InputLabel = ({
           value={value}
           placeholder={placeholder}
           onChange={onChange}
-          bgColor={bgColor || '#eee'}
+          bgcolor={bgcolor || '#eee'}
         />
         {children}
       </InputWrapper>

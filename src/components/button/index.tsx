@@ -4,7 +4,7 @@ interface IButtonProps {
   width?: string;
   height?: string;
   text?: string;
-  bgColor?: string;
+  bgcolor?: string;
   color?: string;
   radius?: number;
   fontSize?: number;
@@ -14,7 +14,7 @@ export const Button = ({
   width,
   height,
   text,
-  bgColor,
+  bgcolor,
   color,
   radius,
   fontSize,
@@ -24,7 +24,7 @@ export const Button = ({
     <ButtonWrapper
       width={width || 'auto'}
       height={height || 'auto'}
-      bgColor={bgColor || '#000'}
+      bgcolor={bgcolor || '#000'}
       color={color || '#fff'}
       radius={radius || 8}
       fontSize={fontSize || 14}

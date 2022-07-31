@@ -25,7 +25,7 @@ const WalkloadCreatePage = () => {
 
   return (
     <>
-      <Gnb bgColor={'#ffffffbf'} shadow />
+      <Gnb bgcolor={'#ffffffbf'} shadow />
       <Map />
 
       <DesktopWrapper>
@@ -42,7 +42,7 @@ const WalkloadCreatePage = () => {
       </DesktopWrapper>
 
       <MobileWrapper>
-        <BottomSheet arrowIconColorWhite bgColor="#00C471">
+        <BottomSheet arrowIconColorWhite bgcolor="#00C471">
           <Header
             address={address}
             openCreate={openCreate}

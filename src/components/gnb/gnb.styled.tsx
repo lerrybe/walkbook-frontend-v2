@@ -28,11 +28,11 @@ export const MobileWrapper = styled.div`
 
 interface IWrapperProps {
   shadow?: boolean;
-  bgColor?: string;
+  bgcolor?: string;
 }
 
 export const Wrapper = styled.div<IWrapperProps>(
-  ({ shadow, bgColor }) => `
+  ({ shadow, bgcolor }) => `
   width: 100%;
   min-width: 360px;
   height: 72px;
@@ -41,7 +41,7 @@ export const Wrapper = styled.div<IWrapperProps>(
   align-items: center;
   padding: 20px 40px;
   z-index: 1002;
-  ${bgColor && `background-color: ${bgColor}`};
+  ${bgcolor && `background-color: ${bgcolor}`};
   ${shadow && 'box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1)'};
 
   @media (max-width: 1055px) {

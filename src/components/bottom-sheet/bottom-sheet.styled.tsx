@@ -22,11 +22,11 @@ export const Wrapper = styled.div`
 `;
 
 interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
-  bgColor?: string;
+  bgcolor?: string;
 }
 
 export const Container = styled(motion.div)<ContainerProps>(
-  ({ bgColor }) => `
+  ({ bgcolor }) => `
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -34,21 +34,21 @@ export const Container = styled(motion.div)<ContainerProps>(
   overflow: auto;
   border-radius: 40px 40px 0 0;
   position: relative;
-  ${bgColor && `background-color: ${bgColor}`};
+  ${bgcolor && `background-color: ${bgcolor}`};
 `
 );
 
 interface ToggleWrapperProps extends HTMLAttributes<HTMLDivElement> {
-  bgColor?: string;
+  bgcolor?: string;
 }
 
 export const ToggleWrapper = styled.div<ToggleWrapperProps>(
-  ({ bgColor }) => `
+  ({ bgcolor }) => `
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 5px 0 30px;
-  ${bgColor && `background-color: ${bgColor}`};
+  ${bgcolor && `background-color: ${bgcolor}`};
 
   position: fixed;
   border-radius: 40px 40px 0 0;
